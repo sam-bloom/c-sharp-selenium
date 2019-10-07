@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\SpecFlow.Tools.MsBuild.Generation.2.3.2\build\SpecFlow.Tools.MsBuild.Generation.props" Condition="Exists('..\packages\SpecFlow.Tools.MsBuild.Generation.2.3.2\build\SpecFlow.Tools.MsBuild.Generation.props')" />
+  <Import Project="..\packages\SpecRun.Runner.3.0.352\build\SpecRun.Runner.props" Condition="Exists('..\packages\SpecRun.Runner.3.0.352\build\SpecRun.Runner.props')" />
+  <Import Project="..\packages\Microsoft.NET.Test.Sdk.15.0.0\build\net45\Microsoft.Net.Test.Sdk.props" Condition="Exists('..\packages\Microsoft.NET.Test.Sdk.15.0.0\build\net45\Microsoft.Net.Test.Sdk.props')" />
+  <Import Project="..\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{789217D0-EE71-43AF-B5EF-722240331E7A}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestAutomation</RootNamespace>
+    <AssemblyName>TestAutomation</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.86.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.Plus.Excel.2-3-0.1.7.3\lib\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.1.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.1.1\lib\net45\DnsClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.Plus.Excel.2-3-0.1.7.3\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExtentReports, Version=3.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExtentReports.3.1.3\lib\ExtentReports.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gherkin, Version=5.0.0.0, Culture=neutral, PublicKeyToken=86496cfa5b4a5851, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.Plus.Excel.2-3-0.1.7.3\lib\Gherkin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GurkBurk, Version=0.1.0.15, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\nbehave.0.6.2\lib\net40\GurkBurk.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.4.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.8.4\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.TDAPIOLELib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>CustomDLL\Interop.TDAPIOLELib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13\lib\itextsharp.xmlworker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.7.0\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.7.0\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.7.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NBehave.Gherkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\nbehave.0.6.2\lib\net40\NBehave.Gherkin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NBehave.Narrator.Framework, Version=0.6.2.337, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\nbehave.0.6.2\lib\net40\NBehave.Narrator.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OTAClient.Api, Version=11.51.0.0, Culture=neutral, PublicKeyToken=792843134cf0407a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>CustomDLL\OTAClient.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RazorEngine, Version=3.10.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.10.0\lib\net45\RazorEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="restALM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>CustomDLL\restALM.dll</HintPath>
+    </Reference>
+    <Reference Include="SecureConnect, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>CustomDLL\SecureConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SpecFlow.Plus.Excel, Version=1.7.3.0, Culture=neutral, PublicKeyToken=d0fc5cc18b3b389b, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.Plus.Excel.2-3-0.1.7.3\lib\SpecFlow.Plus.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SpecFlow.Plus.Excel.SpecFlowPlugin, Version=1.7.3.0, Culture=neutral, PublicKeyToken=d0fc5cc18b3b389b, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.Plus.Excel.2-3-0.1.7.3\lib\SpecFlow.Plus.Excel.SpecFlowPlugin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.108.0\lib\net451\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.108.0\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.108.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TechTalk.SpecFlow, Version=2.3.2.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.2.3.2\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WebDriver, Version=3.13.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.13.1\lib\net45\WebDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.13.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.13.1\lib\net45\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebSocket4Net, Version=0.10.0.0, Culture=neutral, PublicKeyToken=eb4e154b696bf72a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CLRun\OrbitFramework\OrbitFramework\OrbitFramework\bin\Debug\WebSocket4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Words.NET, Version=1.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.2.0\lib\Xceed.Words.NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\Google\GoogleHomePage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoogleHomePage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="FrameworkSupports\ALMQCIntegration.cs" />
+    <Compile Include="FrameworkSupports\DataAccess\GetXMLData.cs" />
+    <Compile Include="FrameworkSupports\Reporting\HTMLExtentReport.cs" />
+    <Compile Include="FrameworkSupports\Reporting\Status.cs" />
+    <Compile Include="FrameworkSupports\Reporting\PDFReport.cs" />
+    <Compile Include="FrameworkSupports\Reporting\ReportConversion.cs" />
+    <Compile Include="FrameworkSupports\Reporting\ReportConversionNew.cs" />
+    <Compile Include="FrameworkSupports\Reporting\Reports.cs" />
+    <Compile Include="FrameworkSupports\Reporting\WordReport.cs" />
+    <Compile Include="FrameworkSupports\BaseUtilities.cs" />
+    <Compile Include="FrameworkSupports\DataAccess\ExcelCellFormatting.cs" />
+    <Compile Include="FrameworkSupports\DataAccess\ExcelDataAccess.cs" />
+    <Compile Include="FrameworkSupports\FrameworkException.cs" />
+    <Compile Include="FrameworkSupports\DataAccess\GetProperty.cs" />
+    <Compile Include="FrameworkSupports\SpecflowHookSetup.cs" />
+    <Compile Include="FrameworkSupports\GeneralMethods.cs" />
+    <Compile Include="FrameworkSupports\DriverScript.cs" />
+    <Compile Include="FrameworkSupports\PropertiesCollection.cs" />
+    <Compile Include="FrameworkSupports\DataAccess\XLSExcelDataAccess.cs" />
+    <Compile Include="PageObjectModel\GoogleHome\GoogleHomePage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StepDefinition\HomePage\HomeSteps.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Results\Run_23-07-2019_11-23-57_AM\PDFReport\" />
+    <Folder Include="Results\Run_23-07-2019_11-23-57_AM\WordReport\" />
+    <Folder Include="Results\Run_23-07-2019_11-57-59_AM\PDFReport\" />
+    <Folder Include="Results\Run_23-07-2019_11-57-59_AM\WordReport\" />
+    <Folder Include="Results\Run_23-07-2019_12-06-15_PM\PDFReport\" />
+    <Folder Include="Results\Run_23-07-2019_12-06-15_PM\Screenshots\Validate Emails\" />
+    <Folder Include="Results\Run_23-07-2019_12-06-15_PM\WordReport\" />
+    <Folder Include="Results\Run_23-07-2019_12-06-50_PM\PDFReport\" />
+    <Folder Include="Results\Run_23-07-2019_12-06-50_PM\Screenshots\Validate Emails\" />
+    <Folder Include="Results\Run_23-07-2019_12-06-50_PM\WordReport\" />
+    <Folder Include="Results\Run_23-07-2019_12-18-13_PM\PDFReport\" />
+    <Folder Include="Results\Run_23-07-2019_12-18-13_PM\Screenshots\Validate Create Request Summary Page\" />
+    <Folder Include="Results\Run_23-07-2019_12-18-13_PM\WordReport\" />
+    <Folder Include="Results\Run_23-07-2019_12-18-38_PM\PDFReport\" />
+    <Folder Include="Results\Run_23-07-2019_12-18-38_PM\Screenshots\Validate Create Request Summary Page\" />
+    <Folder Include="Results\Run_23-07-2019_12-18-38_PM\WordReport\" />
+    <Folder Include="Results\Run_24-07-2019_10-08-53_AM\PDFReport\" />
+    <Folder Include="Results\Run_24-07-2019_10-08-53_AM\WordReport\" />
+    <Folder Include="Results\Run_24-07-2019_10-11-59_AM\PDFReport\" />
+    <Folder Include="Results\Run_24-07-2019_10-11-59_AM\WordReport\" />
+    <Folder Include="Results\Run_24-07-2019_11-24-14_AM\PDFReport\" />
+    <Folder Include="Results\Run_24-07-2019_11-24-14_AM\WordReport\" />
+    <Folder Include="Results\Run_24-07-2019_16-08-13_PM\PDFReport\" />
+    <Folder Include="Results\Run_24-07-2019_16-08-13_PM\WordReport\" />
+    <Folder Include="Results\Run_24-07-2019_16-25-21_PM\PDFReport\" />
+    <Folder Include="Results\Run_24-07-2019_16-25-21_PM\WordReport\" />
+    <Folder Include="Results\Run_24-07-2019_17-07-09_PM\PDFReport\" />
+    <Folder Include="Results\Run_24-07-2019_17-07-09_PM\Screenshots\Validate Create Request Summary Page\" />
+    <Folder Include="Results\Run_24-07-2019_17-07-09_PM\WordReport\" />
+    <Folder Include="Results\Run_24-07-2019_17-26-23_PM\PDFReport\" />
+    <Folder Include="Results\Run_24-07-2019_17-26-23_PM\Screenshots\Validate Create Request Summary Page\" />
+    <Folder Include="Results\Run_24-07-2019_17-26-23_PM\WordReport\" />
+    <Folder Include="Results\Run_26-07-2019_10-12-27_AM\Screenshots\Add two numbers\" />
+    <Folder Include="Results\Run_26-07-2019_10-12-27_AM\Screenshots\Add two numbers_Iteration2\" />
+    <Folder Include="Results\Run_26-07-2019_10-14-00_AM\Screenshots\Add two numbers\" />
+    <Folder Include="Results\Run_26-07-2019_10-14-50_AM\Screenshots\Add two numbers\" />
+    <Folder Include="Results\Run_26-07-2019_10-51-34_AM\Screenshots\Add two numbers\" />
+    <Folder Include="Results\Run_26-07-2019_10-56-42_AM\Screenshots\Add two numbers\" />
+    <Folder Include="Results\Run_26-07-2019_11-37-04_AM\PDFReport\" />
+    <Folder Include="Results\Run_26-07-2019_11-37-04_AM\Screenshots\Submit Scan Exclusion Request for one Asset\" />
+    <Folder Include="Results\Run_26-07-2019_11-37-04_AM\WordReport\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\GlobalSettings.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\extent-config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CustomDLL\Interop.TDAPIOLELib.dll" />
+    <Content Include="CustomDLL\OTAClient.Api.dll" />
+    <Content Include="CustomDLL\restALM.dll" />
+    <Content Include="CustomDLL\SecureConnect.dll" />
+    <Content Include="Drivers\chromedriver.exe" />
+    <Content Include="Drivers\IEDriverServer.exe" />
+    <Content Include="FrameworkSupports\Reporting\Images\EmptyImage.png" />
+    <Content Include="FrameworkSupports\Reporting\Images\HTMLlogo.png" />
+    <Content Include="FrameworkSupports\Reporting\Images\logo.png" />
+    <Content Include="packages.config" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-21_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-24_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-25_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-26_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-27_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-28_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-29_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-30_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-31_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-33_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-34_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-35_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-36_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-37_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-38_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-39_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-40_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-41_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-42_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-22-43_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-23-17_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-23-18_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-23-29_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-23-31_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-23-35_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-23-36_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-23-46_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-23-47_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-23-51_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-24-23_PM.png" />
+    <Content Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_14-24-53_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-11_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-16_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-17_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-19_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-20_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-21_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-22_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-23_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-24_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-25_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-26_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-27_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-28_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-30_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-31_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-35-45_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-36-36_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-36-45_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-36-47_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-36-51_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-37-05_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-37-09_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-37-21_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-37-22_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-37-25_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-37-33_PM.png" />
+    <Content Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\Screenshots\Submit Scan Exclusion Request for one Asset\22-07-2019_22-38-35_PM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-04_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-08_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-09_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-10_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-12_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-13_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-14_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-16_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-17_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-18_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-19_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-20_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-21_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-22_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-24_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-25_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-23-57_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-24-39_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-39_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-42_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-43_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-44_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-46_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-47_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-48_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-49_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-50_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-51_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-52_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-53_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-54_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-55_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-57_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-30-58_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-31-23_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-31-25_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-31-29_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-31-46_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-31-50_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-32-07_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-32-08_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-32-11_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-32-21_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-30-31_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-32-24_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-08_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-12_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-13_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-14_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-16_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-17_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-18_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-19_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-21_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-22_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-23_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-24_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-25_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-26_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-27_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-29_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-30_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-55_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-58-57_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-59-01_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-59-18_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-59-19_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-59-23_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-59-40_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-59-41_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-59-45_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-59-55_AM.png" />
+    <Content Include="Results\Run_23-07-2019_11-57-59_AM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_11-59-58_AM.png" />
+    <Content Include="Results\Run_23-07-2019_12-06-15_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_23-07-2019_12-06-50_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_23-07-2019_12-18-13_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_23-07-2019_12-18-38_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_23-07-2019_12-19-45_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_23-07-2019_12-19-45_PM\Screenshots\Validate Create Request Summary Page\23-07-2019_12-19-53_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-19-45_PM\Screenshots\Validate Create Request Summary Page\23-07-2019_12-19-57_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-19-45_PM\Screenshots\Validate Create Request Summary Page\23-07-2019_12-19-58_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-19-45_PM\Screenshots\Validate Create Request Summary Page\23-07-2019_12-19-59_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-19-45_PM\Screenshots\Validate Create Request Summary Page\23-07-2019_12-20-01_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-19-45_PM\Screenshots\Validate Create Request Summary Page\23-07-2019_12-20-02_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-19-45_PM\Screenshots\Validate Create Request Summary Page\23-07-2019_12-20-03_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-19-45_PM\Screenshots\Validate Create Request Summary Page\23-07-2019_12-20-05_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-19-45_PM\Screenshots\Validate Create Request Summary Page\23-07-2019_12-20-46_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-19-45_PM\Screenshots\Validate Create Request Summary Page\23-07-2019_12-20-51_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-46-45_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-46-48_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-46-49_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-46-50_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-46-51_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-46-52_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-46-53_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-46-54_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-46-55_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-46-56_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-46-57_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-46-58_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-46-59_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-47-00_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-47-01_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-47-03_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-47-05_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-47-06_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-47-30_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-47-33_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-47-37_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-47-53_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-47-54_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-47-58_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-48-15_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-48-16_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-48-20_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-48-29_PM.png" />
+    <Content Include="Results\Run_23-07-2019_12-46-35_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_12-48-33_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-32-18_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-32-22_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-32-23_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-32-25_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-32-26_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-32-27_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-32-28_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-32-29_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-32-30_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-32-31_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-32-32_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-32-33_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-32-35_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-32-36_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-33-00_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-33-02_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-33-06_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-33-23_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-33-24_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-33-28_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-33-45_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-33-49_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-33-56_PM.png" />
+    <Content Include="Results\Run_23-07-2019_13-32-10_PM\Screenshots\Submit Scan Exclusion Request for one Asset\23-07-2019_13-33-58_PM.png" />
+    <Content Include="Results\Run_24-07-2019_10-08-53_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_24-07-2019_10-08-53_AM\Screenshots\Validate Create Request Summary Page\24-07-2019_10-09-06_AM.png" />
+    <Content Include="Results\Run_24-07-2019_10-08-53_AM\Screenshots\Validate Create Request Summary Page\24-07-2019_10-09-15_AM.png" />
+    <Content Include="Results\Run_24-07-2019_10-11-59_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_24-07-2019_10-11-59_AM\Screenshots\Validate Create Request Summary Page\24-07-2019_10-12-11_AM.png" />
+    <Content Include="Results\Run_24-07-2019_10-11-59_AM\Screenshots\Validate Create Request Summary Page\24-07-2019_10-12-19_AM.png" />
+    <Content Include="Results\Run_24-07-2019_11-24-14_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_24-07-2019_11-24-14_AM\Screenshots\Submit Scan Exclusion Request for one Asset\24-07-2019_11-24-22_AM.png" />
+    <Content Include="Results\Run_24-07-2019_11-24-14_AM\Screenshots\Submit Scan Exclusion Request for one Asset\24-07-2019_11-24-26_AM.png" />
+    <Content Include="Results\Run_24-07-2019_11-26-26_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_24-07-2019_11-26-26_AM\Screenshots\Validate Create Request Summary Page\24-07-2019_11-26-33_AM.png" />
+    <Content Include="Results\Run_24-07-2019_11-26-26_AM\Screenshots\Validate Create Request Summary Page\24-07-2019_11-26-40_AM.png" />
+    <Content Include="Results\Run_24-07-2019_16-08-13_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_24-07-2019_16-08-13_PM\Screenshots\Verify TenantURL automatically getting loggedin via WebSSO credentials\24-07-2019_16-08-23_PM.png" />
+    <Content Include="Results\Run_24-07-2019_16-19-34_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_24-07-2019_16-19-34_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_16-19-41_PM.png" />
+    <Content Include="Results\Run_24-07-2019_16-19-34_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_16-19-58_PM.png" />
+    <Content Include="Results\Run_24-07-2019_16-19-34_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_16-19-59_PM.png" />
+    <Content Include="Results\Run_24-07-2019_16-19-34_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_16-20-02_PM.png" />
+    <Content Include="Results\Run_24-07-2019_16-25-21_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_24-07-2019_16-25-21_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_16-25-29_PM.png" />
+    <Content Include="Results\Run_24-07-2019_16-25-21_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_16-25-47_PM.png" />
+    <Content Include="Results\Run_24-07-2019_16-25-21_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_16-26-03_PM.png" />
+    <Content Include="Results\Run_24-07-2019_16-35-41_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_24-07-2019_16-35-41_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_16-35-50_PM.png" />
+    <Content Include="Results\Run_24-07-2019_16-35-41_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_16-36-07_PM.png" />
+    <Content Include="Results\Run_24-07-2019_16-35-41_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_16-36-19_PM.png" />
+    <Content Include="Results\Run_24-07-2019_17-07-09_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_24-07-2019_17-08-13_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_24-07-2019_17-08-13_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_17-08-22_PM.png" />
+    <Content Include="Results\Run_24-07-2019_17-08-13_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_17-08-39_PM.png" />
+    <Content Include="Results\Run_24-07-2019_17-08-13_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_17-08-49_PM.png" />
+    <Content Include="Results\Run_24-07-2019_17-26-23_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_24-07-2019_17-26-53_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_24-07-2019_17-26-53_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_17-27-02_PM.png" />
+    <Content Include="Results\Run_24-07-2019_17-26-53_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_17-27-19_PM.png" />
+    <Content Include="Results\Run_24-07-2019_17-26-53_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_17-28-03_PM.png" />
+    <Content Include="Results\Run_24-07-2019_17-33-55_PM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_24-07-2019_17-33-55_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_17-34-03_PM.png" />
+    <Content Include="Results\Run_24-07-2019_17-33-55_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_17-34-20_PM.png" />
+    <Content Include="Results\Run_24-07-2019_17-33-55_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_17-34-21_PM.png" />
+    <Content Include="Results\Run_24-07-2019_17-33-55_PM\Screenshots\Validate Create Request Summary Page\24-07-2019_17-34-40_PM.png" />
+    <Content Include="Results\Run_26-07-2019_10-12-27_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_26-07-2019_10-14-00_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_26-07-2019_10-14-50_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_26-07-2019_10-51-34_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_26-07-2019_10-56-42_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_26-07-2019_11-37-04_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_26-07-2019_11-38-38_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_26-07-2019_11-38-38_AM\Screenshots\Submit Scan Exclusion Request for one Asset\26-07-2019_11-38-44_AM.png" />
+    <Content Include="Results\Run_26-07-2019_11-38-38_AM\Screenshots\Submit Scan Exclusion Request for one Asset\26-07-2019_11-38-48_AM.png" />
+    <Content Include="Results\Run_26-07-2019_11-38-38_AM\Screenshots\Submit Scan Exclusion Request for one Asset\26-07-2019_11-38-54_AM.png" />
+    <Content Include="Results\Run_26-07-2019_11-38-38_AM\Screenshots\Submit Scan Exclusion Request for one Asset\26-07-2019_11-38-59_AM.png" />
+    <Content Include="Results\Run_26-07-2019_11-53-01_AM\HTMLReport\Summary Report.html" />
+    <Content Include="Results\Run_26-07-2019_11-53-01_AM\Screenshots\Submit Scan Exclusion Request for one Asset\26-07-2019_11-53-08_AM.png" />
+    <Content Include="Results\Run_26-07-2019_11-53-01_AM\Screenshots\Submit Scan Exclusion Request for one Asset\26-07-2019_11-53-11_AM.png" />
+    <Content Include="Results\Run_26-07-2019_11-53-01_AM\Screenshots\Submit Scan Exclusion Request for one Asset\26-07-2019_11-53-12_AM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\Google\GoogleHomePage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GoogleHomePage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="InputData\UserInput.xls">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="InputData\MyWebSSO.xls" />
+    <None Include="license" />
+    <None Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\PDFReport\Submit Scan Exclusion Request for one Asset.pdf" />
+    <None Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\WordReport\Submit Scan Exclusion Request for one Asset.docx" />
+    <None Include="Results\Run_22-07-2019_14-22-12_PM_VMandGM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\PDFReport\Submit Scan Exclusion Request for one Asset.pdf" />
+    <None Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\WordReport\Submit Scan Exclusion Request for one Asset.docx" />
+    <None Include="Results\Run_22-07-2019_22-35-02_PM_VM-GM-EGM Approval Flow\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_23-07-2019_11-30-31_AM\PDFReport\Submit Scan Exclusion Request for one Asset.pdf" />
+    <None Include="Results\Run_23-07-2019_11-30-31_AM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_23-07-2019_11-30-31_AM\WordReport\Submit Scan Exclusion Request for one Asset.docx" />
+    <None Include="Results\Run_23-07-2019_11-30-31_AM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_23-07-2019_12-19-45_PM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_23-07-2019_12-19-45_PM\PDFReport\Validate Create Request Summary Page.pdf" />
+    <None Include="Results\Run_23-07-2019_12-19-45_PM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_23-07-2019_12-19-45_PM\WordReport\Validate Create Request Summary Page.docx" />
+    <None Include="Results\Run_23-07-2019_12-46-35_PM\PDFReport\Submit Scan Exclusion Request for one Asset.pdf" />
+    <None Include="Results\Run_23-07-2019_12-46-35_PM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_23-07-2019_12-46-35_PM\WordReport\Submit Scan Exclusion Request for one Asset.docx" />
+    <None Include="Results\Run_23-07-2019_12-46-35_PM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_23-07-2019_13-32-10_PM\PDFReport\Submit Scan Exclusion Request for one Asset.pdf" />
+    <None Include="Results\Run_23-07-2019_13-32-10_PM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_23-07-2019_13-32-10_PM\WordReport\Submit Scan Exclusion Request for one Asset.docx" />
+    <None Include="Results\Run_23-07-2019_13-32-10_PM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_24-07-2019_11-26-26_AM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_24-07-2019_11-26-26_AM\PDFReport\Validate Create Request Summary Page.pdf" />
+    <None Include="Results\Run_24-07-2019_11-26-26_AM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_24-07-2019_11-26-26_AM\WordReport\Validate Create Request Summary Page.docx" />
+    <None Include="Results\Run_24-07-2019_16-19-34_PM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_24-07-2019_16-19-34_PM\PDFReport\Validate Create Request Summary Page.pdf" />
+    <None Include="Results\Run_24-07-2019_16-19-34_PM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_24-07-2019_16-19-34_PM\WordReport\Validate Create Request Summary Page.docx" />
+    <None Include="Results\Run_24-07-2019_16-35-41_PM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_24-07-2019_16-35-41_PM\PDFReport\Validate Create Request Summary Page.pdf" />
+    <None Include="Results\Run_24-07-2019_16-35-41_PM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_24-07-2019_16-35-41_PM\WordReport\Validate Create Request Summary Page.docx" />
+    <None Include="Results\Run_24-07-2019_17-08-13_PM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_24-07-2019_17-08-13_PM\PDFReport\Validate Create Request Summary Page.pdf" />
+    <None Include="Results\Run_24-07-2019_17-08-13_PM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_24-07-2019_17-08-13_PM\WordReport\Validate Create Request Summary Page.docx" />
+    <None Include="Results\Run_24-07-2019_17-26-53_PM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_24-07-2019_17-26-53_PM\PDFReport\Validate Create Request Summary Page.pdf" />
+    <None Include="Results\Run_24-07-2019_17-26-53_PM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_24-07-2019_17-26-53_PM\WordReport\Validate Create Request Summary Page.docx" />
+    <None Include="Results\Run_24-07-2019_17-33-55_PM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_24-07-2019_17-33-55_PM\PDFReport\Validate Create Request Summary Page.pdf" />
+    <None Include="Results\Run_24-07-2019_17-33-55_PM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_24-07-2019_17-33-55_PM\WordReport\Validate Create Request Summary Page.docx" />
+    <None Include="Results\Run_26-07-2019_10-12-27_AM\PDFReport\Add two numbers.pdf" />
+    <None Include="Results\Run_26-07-2019_10-12-27_AM\PDFReport\Add two numbers_Iteration2.pdf" />
+    <None Include="Results\Run_26-07-2019_10-12-27_AM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_26-07-2019_10-12-27_AM\WordReport\Add two numbers.docx" />
+    <None Include="Results\Run_26-07-2019_10-12-27_AM\WordReport\Add two numbers_Iteration2.docx" />
+    <None Include="Results\Run_26-07-2019_10-12-27_AM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_26-07-2019_10-14-00_AM\PDFReport\Add two numbers.pdf" />
+    <None Include="Results\Run_26-07-2019_10-14-00_AM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_26-07-2019_10-14-00_AM\WordReport\Add two numbers.docx" />
+    <None Include="Results\Run_26-07-2019_10-14-00_AM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_26-07-2019_10-14-50_AM\PDFReport\Add two numbers.pdf" />
+    <None Include="Results\Run_26-07-2019_10-14-50_AM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_26-07-2019_10-14-50_AM\WordReport\Add two numbers.docx" />
+    <None Include="Results\Run_26-07-2019_10-14-50_AM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_26-07-2019_10-51-34_AM\PDFReport\Add two numbers.pdf" />
+    <None Include="Results\Run_26-07-2019_10-51-34_AM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_26-07-2019_10-51-34_AM\WordReport\Add two numbers.docx" />
+    <None Include="Results\Run_26-07-2019_10-51-34_AM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_26-07-2019_10-56-42_AM\PDFReport\Add two numbers.pdf" />
+    <None Include="Results\Run_26-07-2019_10-56-42_AM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_26-07-2019_10-56-42_AM\WordReport\Add two numbers.docx" />
+    <None Include="Results\Run_26-07-2019_10-56-42_AM\WordReport\Summary Report.docx" />
+    <None Include="Results\Run_26-07-2019_11-38-38_AM\PDFReport\Submit Scan Exclusion Request for one Asset.pdf" />
+    <None Include="Results\Run_26-07-2019_11-38-38_AM\WordReport\Submit Scan Exclusion Request for one Asset.docx" />
+    <None Include="Results\Run_26-07-2019_11-53-01_AM\PDFReport\Submit Scan Exclusion Request for one Asset.pdf" />
+    <None Include="Results\Run_26-07-2019_11-53-01_AM\PDFReport\Summary Report.pdf" />
+    <None Include="Results\Run_26-07-2019_11-53-01_AM\WordReport\Submit Scan Exclusion Request for one Asset.docx" />
+    <None Include="Results\Run_26-07-2019_11-53-01_AM\WordReport\Summary Report.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\SpecFlow.2.3.2\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.3.2\build\SpecFlow.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\SpecFlow.2.3.2\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.3.2\build\SpecFlow.targets'))" />
+    <Error Condition="!Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.10.1\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.108.0\build\net451\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NET.Test.Sdk.15.0.0\build\net45\Microsoft.Net.Test.Sdk.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NET.Test.Sdk.15.0.0\build\net45\Microsoft.Net.Test.Sdk.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NET.Test.Sdk.15.0.0\build\net45\Microsoft.Net.Test.Sdk.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NET.Test.Sdk.15.0.0\build\net45\Microsoft.Net.Test.Sdk.targets'))" />
+    <Error Condition="!Exists('..\packages\SpecRun.Runner.3.0.352\build\SpecRun.Runner.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecRun.Runner.3.0.352\build\SpecRun.Runner.props'))" />
+    <Error Condition="!Exists('..\packages\SpecRun.Runner.3.0.352\build\SpecRun.Runner.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecRun.Runner.3.0.352\build\SpecRun.Runner.targets'))" />
+    <Error Condition="!Exists('..\packages\SpecFlow.Tools.MsBuild.Generation.2.3.2\build\SpecFlow.Tools.MsBuild.Generation.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.Tools.MsBuild.Generation.2.3.2\build\SpecFlow.Tools.MsBuild.Generation.props'))" />
+    <Error Condition="!Exists('..\packages\SpecFlow.Tools.MsBuild.Generation.2.3.2\build\SpecFlow.Tools.MsBuild.Generation.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.Tools.MsBuild.Generation.2.3.2\build\SpecFlow.Tools.MsBuild.Generation.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.108.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net451\System.Data.SQLite.Core.targets')" />
+  <Import Project="..\packages\Microsoft.NET.Test.Sdk.15.0.0\build\net45\Microsoft.Net.Test.Sdk.targets" Condition="Exists('..\packages\Microsoft.NET.Test.Sdk.15.0.0\build\net45\Microsoft.Net.Test.Sdk.targets')" />
+  <Import Project="..\packages\SpecRun.Runner.3.0.352\build\SpecRun.Runner.targets" Condition="Exists('..\packages\SpecRun.Runner.3.0.352\build\SpecRun.Runner.targets')" />
+  <Import Project="..\packages\SpecFlow.Tools.MsBuild.Generation.2.3.2\build\SpecFlow.Tools.MsBuild.Generation.targets" Condition="Exists('..\packages\SpecFlow.Tools.MsBuild.Generation.2.3.2\build\SpecFlow.Tools.MsBuild.Generation.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

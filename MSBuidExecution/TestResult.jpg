@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run start-time="2019-09-27 00:53:43Z">
+  <command-line><![CDATA[C:\dpg_test_automation\CyberSecurity\Backup-base-project\CyberSecurity-VM-TestAutomation\packages\NUnit.ConsoleRunner.3.8.0\tools\nunit3-console.exe  C:\dpg_test_automation\CyberSecurity\Backup-base-project\CyberSecurity-VM-TestAutomation\DPG_CBA_Framework\bin\Debug\DPG_CBA_Framework.dll --where "cat=VMScanExclusionRegression" --labels=All]]></command-line>
+</test-run>

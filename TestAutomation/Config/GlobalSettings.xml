@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<globalconfiguration>
+  <provider name="GlobalTimeOut" value="5"/>
+  <provider name="Browser" value="chrome"/>
+  <provider name="ObjectSyncTimeout" value="5"/>
+  <provider name="ObjectIdentificationTimeOut" value="5"/>
+  <provider name="UserName" value="pshrutpp"/>
+  <provider name="ReqPasswrd" value=""/>
+  <provider name="IsRequiredReport" value="true"/>
+  <provider name="WordReport" value="true"/>
+  <provider name="PDFReport" value="true"/>
+  <provider name="IsReuiredALMUpdates" value="false"/>
+  <provider name="TestType" value=""/>
+  <provider name="ALM.Domain" value=""/>
+  <provider name="ALM.Project" value=""/>
+  <provider name="LAN.Domain" value=""/>
+  <provider name="LAN.UserName" value="xxxxx"/>
+  <provider name="LAN.EncPassword" value="xxxxx"/>
+  <provider name="ALM.TestFolder" value=""/>
+  <provider name="ALMReportAttachmentType" value="word"/>
+  <provider name="IsRreqMnlRptCnv" value="true"/>
+  <provider name="ProjectName" value="ABC"/>
+  <provider name="ReleaseName" value="Sprint Execution"/>
+  <provider name="InputDataFileName" value="UserInput.xls"/>
+  <provider name="ApplicationURL" value="Http://Google.com"/>  
+
+    
+ 
+
+</globalconfiguration>
+

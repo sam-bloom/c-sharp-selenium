@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DocxToHtml</name>
+    </assembly>
+    <members>
+        <member name="M:DocxToHtml.Element.PtOpenXmlExtensions.GetAllParts(DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer)">
+            <summary>
+            Creates a complete list of all parts contained in the <see cref="T:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer"/>.
+            </summary>
+            <param name="container">
+            A <see cref="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument"/>, <see cref="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument"/>, or
+            <see cref="T:DocumentFormat.OpenXml.Packaging.PresentationDocument"/>.
+            </param>
+            <returns>list of <see cref="T:DocumentFormat.OpenXml.Packaging.OpenXmlPart"/>s contained in the <see cref="T:DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer"/>.</returns>
+        </member>
+        <member name="M:DocxToHtml.Element.RevisionProcessor.AnnotateBlockContentElements(System.Xml.Linq.XElement)">
+             Accept deleted paragraphs.
+            
+             Group together all paragraphs that contain w:p/w:pPr/w:rPr/w:del elements.  Make a
+             second group for the content element immediately following a paragraph that contains
+             a w:del element.  The code uses the approach of dealing with paragraph content at
+             'levels', ignoring paragraph content at other levels.  Form a new paragraph that
+             contains the content of the grouped paragraphs with deleted paragraph marks, and the
+             content of the paragraph immediately following a paragraph that contains a deleted
+             paragraph mark.  Include in the new paragraph the paragraph properties from the
+             paragraph following.  When assembling the new paragraph, use a transform that collapses
+             the paragraph nodes when adding content, thereby preserving custom XML and content
+             controls.
+        </member>
+    </members>
+</doc>

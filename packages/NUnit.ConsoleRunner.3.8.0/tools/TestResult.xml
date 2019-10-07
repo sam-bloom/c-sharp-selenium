@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run start-time="2018-08-12 08:25:32Z">
+  <command-line><![CDATA[nunit3-console.exe  "C:\DPGWebSSO\DPG_WebSSO\DPG_CBA_Framework\bin\Debug\DPG_CBA_Framework.dll" --where "cat=WebSSO"]]></command-line>
+</test-run>

@@ -1,0 +1,7 @@
+#Exclude file(s) 
+.vs/
+*.log
+*.suo
+TestAutomation/Results/
+TestAutomation/bin/
+TestAutomation/obj/ 
